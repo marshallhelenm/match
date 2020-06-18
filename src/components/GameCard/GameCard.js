@@ -1,31 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import "./GameCard.css";
-import { Card, Image } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 import ReactCardFlip from "react-card-flip";
 
-function GameCard({ name, img_url }) {
-  const [flipped, setFlipped] = useState(false);
-  const flipCard = () => {
-    if (flipped === false) {
-      setFlipped(true);
-    }
-  };
+function GameCard({ item, cardNum, handleClick, flipped, disabled }) {
   return (
-    <ReactCardFlip isFlipped={flipped} >
-      <Card //front of card
-        onClick={flipCard}
-        raised
-        wrapped="true"
-        name={name}
-        flipped={flipped}
-        className="card-front"
+    <ReactCardFlip isFlipped={flipped}>
+      <div
+        className="card-front card"
+        onClick={() => {
+          console.log('disabled:', disabled)
+          if (disabled) handleClick(cardNum, item);
+        }}
       >
-        <Image src={img_url} size="small" />
-      </Card>
-      <Card className="card-back">
+        <Icon name="question" size="massive" color="black" />
+      </div>
 
-      </Card>
-
+      <div className="card-back card">
+        <Icon name={item.icon} size="massive" color="black" />
+      </div>
     </ReactCardFlip>
   );
 }
