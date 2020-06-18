@@ -14,6 +14,7 @@ function Board({ handleClick, cardArray, matched, disabled, flippedCards }) {
           cardNum={i}
           item={item}
           disabled={disabled}
+          matched={matched.includes(item)}
         />
       );
     });

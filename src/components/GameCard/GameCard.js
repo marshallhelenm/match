@@ -3,9 +3,9 @@ import "./GameCard.css";
 import { Icon } from "semantic-ui-react";
 import ReactCardFlip from "react-card-flip";
 
-function GameCard({ item, cardNum, handleClick, flipped, disabled }) {
+function GameCard({ item, cardNum, handleClick, flipped, disabled, matched }) {
   return (
-    <ReactCardFlip isFlipped={flipped}>
+    <ReactCardFlip isFlipped={flipped || matched}>
       <div
         className="card-front card"
         onClick={() => {

@@ -21,25 +21,41 @@ function App() {
     setCards([...array]);
   }, []);
 
-  const checkMatch = () => {
-    console.log("check for a match");
-    if (flippedCards[0].name === flippedCards[1].name) {
+  // const checkMatch = () => {
+  //   console.log("check for a match");
+  //   if (flippedCards[0].name === flippedCards[1].name) {
+  //     console.log("match!");
+  //     setMatched([...matched, ...flippedCards]);
+  //     setFlippedCards([]);
+  //   } else {
+  //     console.log("no match...");
+  //     setFlippedCards([]);
+  //   }
+  // };
+
+  const isMatch = (name) => {
+    console.log(name, flippedCards);
+    if (flippedCards[0].name === name) {
       console.log("match!");
-      setMatched([...matched, ...flippedCards]);
-      setFlippedCards([]);
+      return true;
     } else {
       console.log("no match...");
-      setFlippedCards([]);
+      return false;
     }
   };
 
   const handleClick = (cardNum, item) => {
     console.log("handleClick");
     setDisabled("true");
-    if (flippedCards.length < 2) {
-      setFlippedCards([...flippedCards, item]);
+    setFlippedCards([...flippedCards, item]);
+    if (flippedCards.length < 1) {
       setDisabled("false");
       return;
+    } else {
+      if (isMatch(item.name)) {
+        setMatched([...matched, flippedCards[0], item]);
+      }
+      setTimeout(() => setFlippedCards([]), 2000);
     }
   };
 
