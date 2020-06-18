@@ -7,7 +7,7 @@ import { Card } from "semantic-ui-react";
 function Board() {
   const generateCards = () => {
     return card_data.map((item) => {
-      return <GameCard key={item.id} id={item.id} name={item.name} img_url={item.img_url} />;
+      return <GameCard key={item.id} name={item.name} img_url={item.img_url} />;
     });
   };
   //need to provide to the card an id and a name
