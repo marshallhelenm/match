@@ -2,14 +2,20 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Board from "./components/Board/Board";
 import card_data from "./card_data";
+import { Button } from "semantic-ui-react";
+import GameModal from "./components/GameModal/GameModal";
 
 function App() {
   const [cards, setCards] = useState(card_data);
   const [matched, setMatched] = useState([]);
   const [disabled, setDisabled] = useState("false");
   const [flippedCards, setFlippedCards] = useState([]);
+  const [turns, setTurns] = useState(0);
+  const [end, setEnd] = useState({ end: false, win: false });
 
-  useEffect(() => {
+  const turnMax = 20;
+
+  const shuffleCards = () => {
     console.log("shufflin the cards");
     let array = cards;
     for (let i = array.length - 1; i > 0; i--) {
@@ -19,19 +25,22 @@ function App() {
       array[j] = temp;
     }
     setCards([...array]);
-  }, []);
+  };
 
-  // const checkMatch = () => {
-  //   console.log("check for a match");
-  //   if (flippedCards[0].name === flippedCards[1].name) {
-  //     console.log("match!");
-  //     setMatched([...matched, ...flippedCards]);
-  //     setFlippedCards([]);
-  //   } else {
-  //     console.log("no match...");
-  //     setFlippedCards([]);
-  //   }
-  // };
+  const newGame = () => {
+    setDisabled("true");
+    setFlippedCards([]);
+    setMatched([]);
+    setTurns(0)
+    setTimeout(() => {
+      shuffleCards();
+      setDisabled("false");
+    }, 500);
+  };
+
+  useEffect(() => {
+    newGame();
+  }, []);
 
   const isMatch = (name) => {
     console.log(name, flippedCards);
@@ -44,32 +53,65 @@ function App() {
     }
   };
 
-  const handleClick = (cardNum, item) => {
-    console.log("handleClick");
+  const handleCardClick = (cardNum, item) => {
+    console.log("handleCardClick");
     setDisabled("true");
     setFlippedCards([...flippedCards, item]);
     if (flippedCards.length < 1) {
       setDisabled("false");
       return;
     } else {
+      setDisabled("true");
+      setTurns(turns + 1);
       if (isMatch(item.name)) {
         setMatched([...matched, flippedCards[0], item]);
+        setFlippedCards([]);
+        setDisabled("false");
+      } else {
+        setTimeout(() => {
+          setFlippedCards([]);
+          setDisabled("false");
+        }, 1500);
       }
-      setTimeout(() => setFlippedCards([]), 2000);
     }
   };
 
+  useEffect(() => {
+    if (turns >= turnMax) {
+      //game over
+      console.log("game over");
+      setEnd({ end: true, win: false });
+    }
+  }, [turns]);
+
+  useEffect(() => {
+    if (matched.length === 16) {
+      //game won
+      console.log("game won!");
+      setEnd({ end: true, win: true });
+    }
+  }, [matched]);
+
   return (
     <div className="App">
+      <GameModal end={end} newGame={newGame} setOpen={setEnd} />
       <header className="App-header">
-        <h1>Match 'Em!</h1>
+        <div>
+          <Button onClick={newGame}>New Game</Button>
+        </div>
+        <div>
+          <h1>Match 'Em!</h1>
+        </div>
+        <div>
+          <h3>Moves Remaining: {turnMax - turns}</h3>
+        </div>
       </header>
       <Board
         matched={matched}
         disabled={disabled}
         cardArray={cards}
         flippedCards={flippedCards}
-        handleClick={handleClick}
+        handleClick={handleCardClick}
       />
     </div>
   );

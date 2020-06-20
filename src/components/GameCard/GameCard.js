@@ -10,7 +10,7 @@ function GameCard({ item, cardNum, handleClick, flipped, disabled, matched }) {
         className="card-front card"
         onClick={() => {
           console.log('disabled:', disabled)
-          if (disabled) handleClick(cardNum, item);
+          if (disabled === 'false') handleClick(cardNum, item);
         }}
       >
         <Icon name="question" size="massive" color="black" />

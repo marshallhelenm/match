@@ -1,6 +1,7 @@
 .board{
-  background-color: #2e5945;
   display: grid;
     grid-template: repeat(4, 1fr) / repeat(4, 1fr);
     justify-content: space-around;
+  margin-left: 5%;
+  margin-right: 5%;
 }

@@ -1,11 +1,11 @@
 .card-back {
-  background-color: antiquewhite;
+  background-color: #9dc6a7;
 }
 
 .card-front {
   /* height: 150px;
     width: 150px;  */
-  background-color: white;
+  background-color: #d1f5d3;
 }
 
 .card {
@@ -13,4 +13,9 @@
   margin: 5%;
   padding: 10%;
   border-radius: 5%;
+  display: inline-block;
+}
+
+.symbol{
+  background-color: #7d5e2a;
 }
