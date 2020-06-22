@@ -31,16 +31,17 @@ function App() {
     setDisabled("true");
     setFlippedCards([]);
     setMatched([]);
-    setTurns(0)
+    setTurns(0);
+    setEnd({ end: false, win: false });
     setTimeout(() => {
       shuffleCards();
       setDisabled("false");
     }, 500);
   };
 
-  useEffect(() => {
+  const handleModal = () => {
     newGame();
-  }, []);
+  };
 
   const isMatch = (name) => {
     console.log(name, flippedCards);
@@ -77,24 +78,34 @@ function App() {
   };
 
   useEffect(() => {
+    newGame();
+  }, []);
+
+  useEffect(() => {
+    //game over
     if (turns >= turnMax) {
       //game over
       console.log("game over");
-      setEnd({ end: true, win: false });
+      setTimeout(() => {
+        setEnd({ end: true, win: false });
+      }, 1000);
     }
   }, [turns]);
 
   useEffect(() => {
+    //game won
     if (matched.length === 16) {
       //game won
       console.log("game won!");
-      setEnd({ end: true, win: true });
+      setTimeout(() => {
+        setEnd({ end: true, win: true });
+      }, 1000);
     }
   }, [matched]);
 
   return (
     <div className="App">
-      <GameModal end={end} newGame={newGame} setOpen={setEnd} />
+      <GameModal end={end} handleModal={handleModal} />
       <header className="App-header">
         <div>
           <Button onClick={newGame}>New Game</Button>
@@ -103,7 +114,7 @@ function App() {
           <h1>Match 'Em!</h1>
         </div>
         <div>
-          <h3>Moves Remaining: {turnMax - turns}</h3>
+          <h3>Moves: {turnMax - turns}</h3>
         </div>
       </header>
       <Board

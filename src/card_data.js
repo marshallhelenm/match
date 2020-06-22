@@ -1,3 +1,8 @@
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faBug, faSun, faMoon, faLeaf, faRocket, faLemon, faHeart, faEye, faQuestion } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faBug, faSun, faMoon, faLeaf, faRocket, faLemon, faHeart, faEye, faQuestion)
+
 const card_data = [
   { name: "A", id: "A1", icon: "bug" },
   { name: "A", id: "A2", icon: "bug" },
