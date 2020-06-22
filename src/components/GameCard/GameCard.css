@@ -10,12 +10,16 @@
 
 .card {
   justify-content: center;
+  align-content: center;
   margin: 10%;
   padding: 10%;
   border-radius: 5%;
   display: inline-block;
+  min-width: 90%
 }
 
-.symbol{
+
+.symbol {
   color: #7d5e2a;
 }
+

@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { Modal, Button } from "semantic-ui-react";
+import "./gameModal.css";
 
 function GameModal({ end, newGame, handleModal }) {
   return (
     <Modal size="mini" open={end.end}>
-      <Modal.Header>{end.win ? "You Won!" : "Game Over"}</Modal.Header>
-      <Modal.Actions>
-        <Button
-          positive
-          onClick={handleModal}
-        >
-          New Game
-        </Button>
-      </Modal.Actions>
+      <div className="gameModal">
+        <h1 className="fonts" >{end.win ? "You Won!" : "Game Over"}</h1>
+          <Button positive onClick={handleModal}>
+            New Game
+          </Button>
+      </div>
     </Modal>
   );
 }

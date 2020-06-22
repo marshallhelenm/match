@@ -108,7 +108,7 @@ function App() {
       <GameModal end={end} handleModal={handleModal} />
       <header className="App-header">
         <div>
-          <Button onClick={newGame}>New Game</Button>
+          <Button positive onClick={newGame}>New Game</Button>
         </div>
         <div>
           <h1>Match 'Em!</h1>
