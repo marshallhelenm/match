@@ -117,13 +117,16 @@ function App() {
           <h3 className="topBox">Moves: {turnMax - turns}</h3>
         </div>
       </header>
+      <div className="body">
+
       <Board
         matched={matched}
         disabled={disabled}
         cardArray={cards}
         flippedCards={flippedCards}
         handleClick={handleCardClick}
-      />
+        />
+        </div>
     </div>
   );
 }
