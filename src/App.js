@@ -26,6 +26,7 @@ function App() {
   };
 
   const newGame = () => {
+    console.log('new game')
     setDisabled("true");
     setFlippedCards([]);
     setMatched([]);
@@ -77,6 +78,7 @@ function App() {
 
   useEffect(() => {
     newGame();
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
