@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Board from "./components/Board/Board";
 import card_data from "./card_data";
-import { Button } from "semantic-ui-react";
 import GameModal from "./components/GameModal/GameModal";
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
   const turnMax = 20;
 
   const shuffleCards = () => {
-    console.log("shufflin the cards");
     let array = cards;
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * i);
@@ -108,13 +106,13 @@ function App() {
       <GameModal end={end} handleModal={handleModal} />
       <header className="App-header">
         <div>
-          <Button positive onClick={newGame}>New Game</Button>
+        <button className="newButton" onClick={newGame}>New Game</button>
         </div>
         <div>
-          <h1>Match 'Em!</h1>
+          <h1 className="topBox">Match 'Em!</h1>
         </div>
         <div>
-          <h3>Moves: {turnMax - turns}</h3>
+          <h3 className="topBox">Moves: {turnMax - turns}</h3>
         </div>
       </header>
       <Board

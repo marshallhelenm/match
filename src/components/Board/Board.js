@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Board.css";
 import GameCard from "../GameCard/GameCard";
-import { Card } from "semantic-ui-react";
 
 function Board({ handleClick, cardArray, matched, disabled, flippedCards }) {
   const generateCards = () => {
