@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Mali:wght@600&display=swap");
 
+body {
+  background-color: #235952;
+}
+
 .App {
   text-align: center;
-  /* background-color: #231903; */
-  background-color: #235952;
 }
 
 h1,
@@ -36,7 +38,6 @@ h1 {
 
 @media (max-width: 620) {
   .App-header {
-
     flex-wrap: wrap;
     flex-direction: column;
   }
