@@ -8,14 +8,15 @@
   color: #7d5e2a;
 }
 
+
 .card {
+  position: relative;
   justify-content: center;
   align-content: center;
   /* margin: 10%; */
   /* padding: 10%; */
   border-radius: 5%;
   /* min-width: 90%; */
-  position: relative;
   /* width: 100px; */
   margin: 5%
 }

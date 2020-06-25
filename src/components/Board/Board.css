@@ -22,11 +22,11 @@
 
 
 
-/* @media (min-width: 800px) {
+@media (max-width: 299px) {
   .board {
-    max-width: 80%;
+    width: 100%;
   }
-} */
+}
 
 @media (min-width: 300px) {
   .board {
