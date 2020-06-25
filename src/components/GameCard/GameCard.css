@@ -1,25 +1,36 @@
 .card-back {
   background-color: #9dc6a7;
 }
-
 .card-front {
-  /* height: 150px;
-    width: 150px;  */
   background-color: #d1f5d3;
+}
+.symbol {
+  color: #7d5e2a;
 }
 
 .card {
   justify-content: center;
   align-content: center;
-  margin: 10%;
-  padding: 10%;
+  /* margin: 10%; */
+  /* padding: 10%; */
   border-radius: 5%;
-  display: inline-block;
-  min-width: 90%
+  /* min-width: 90%; */
+  position: relative;
+  /* width: 100px; */
+  margin: 5%
 }
 
+.card:before{
+	content: "";
+	display: block;
+	padding-top: 100%; 	/* ratio of 1:1*/
+}
 
 .symbol {
-  color: #7d5e2a;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
-

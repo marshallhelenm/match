@@ -7,6 +7,21 @@
   max-width: 80%;
 }
 
+.board::before {
+  content: '';
+  width: 0;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+.board > *:first-child {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+
+
 /* @media (min-width: 800px) {
   .board {
     max-width: 80%;
