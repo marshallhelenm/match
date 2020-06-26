@@ -117,6 +117,15 @@ function App() {
           handleClick={handleCardClick}
         />
       </div>
+      <footer className="app-footer">
+        <div>
+          <p>Created by El Marshall</p>
+        </div>
+        <div>
+          <a href="https://github.com/marshallhelenm/match">GitHub Repo</a> |{" "}
+          <a href="https://marshallhelenm.me/">Portfolio</a>
+        </div>
+      </footer>
     </div>
   );
 }

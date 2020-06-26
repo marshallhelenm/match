@@ -12,7 +12,6 @@
   max-width: 80%;
 }
 
-
 @media (max-width: 700px) {
   .App-header {
     flex-direction: column;
@@ -27,7 +26,6 @@
     margin-bottom: 2%;
     width: 100%;
     border-radius: 5px;
-    
   }
   .newButton {
     width: 100%;
@@ -39,8 +37,8 @@
   h1 {
     font-size: xx-large;
   }
-  .App-header{
-      flex-direction: row;
+  .App-header {
+    flex-direction: row;
   }
 }
 
@@ -67,4 +65,17 @@
   background-color: #d1f5d3;
   border-radius: 5px;
   padding: 15px 32px;
+}
+
+.app-footer {
+  color: #231903;
+  margin-bottom: 1%;
+  margin-top: 3%;
+}
+
+.app-footer a {
+  color: #231903;
+}
+.app-footer a:hover {
+  color: #7d5e2a;
 }
