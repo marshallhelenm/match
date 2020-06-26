@@ -13,56 +13,6 @@ h3 {
   font-family: "Mali", cursive;
 }
 
-h1 {
-  font-size: xx-large;
-}
-
-.App-header {
-  min-height: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  font-size: calc(10px + 2vmin);
-  color: #231903;
-  padding-top: 5%;
-  margin-bottom: 5%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (min-width: 300px) {
-  .App-header {
-    max-width: 80%;
-  }
-}
-
-@media (max-width: 620) {
-  .App-header {
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-  h1 {
-    font-size: small;
-  }
-}
-
-.newButton {
-  font-family: "Mali", cursive;
-  background-color: #d1f5d3;
-  border-radius: 5px;
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-
-.topBox {
-  background-color: #d1f5d3;
-  border-radius: 5px;
-  padding: 15px 32px;
-}
 
 /* .body{
   display: flex;

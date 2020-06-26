@@ -3,6 +3,7 @@ import "./App.css";
 import Board from "./components/Board/Board";
 import card_data from "./card_data";
 import GameModal from "./components/GameModal/GameModal";
+import MatchHeader from "./components/MatchHeader/MatchHeader.js";
 
 function App() {
   const [cards, setCards] = useState(card_data);
@@ -26,7 +27,7 @@ function App() {
   };
 
   const newGame = () => {
-    console.log('new game')
+    console.log("new game");
     setDisabled("true");
     setFlippedCards([]);
     setMatched([]);
@@ -106,27 +107,16 @@ function App() {
   return (
     <div className="App">
       <GameModal end={end} handleModal={handleModal} />
-      <header className="App-header">
-        <div>
-        <button className="newButton" onClick={newGame}>New Game</button>
-        </div>
-        <div>
-          <h1 className="topBox">Match 'Em!</h1>
-        </div>
-        <div>
-          <h3 className="topBox">Moves: {turnMax - turns}</h3>
-        </div>
-      </header>
+      <MatchHeader newGame={newGame} turns={turns} turnMax={turnMax} />
       <div className="body">
-
-      <Board
-        matched={matched}
-        disabled={disabled}
-        cardArray={cards}
-        flippedCards={flippedCards}
-        handleClick={handleCardClick}
+        <Board
+          matched={matched}
+          disabled={disabled}
+          cardArray={cards}
+          flippedCards={flippedCards}
+          handleClick={handleCardClick}
         />
-        </div>
+      </div>
     </div>
   );
 }

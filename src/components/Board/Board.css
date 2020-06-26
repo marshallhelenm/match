@@ -22,13 +22,13 @@
 
 
 
-@media (max-width: 299px) {
+@media (max-width: 700px) {
   .board {
     width: 100%;
   }
 }
 
-@media (min-width: 300px) {
+@media (min-width: 701px) {
   .board {
     max-width: 66%;
   }

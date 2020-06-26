@@ -1,3 +1,4 @@
+/* colors: */
 .card-back {
   background-color: #9dc6a7;
 }
@@ -13,11 +14,7 @@
   position: relative;
   justify-content: center;
   align-content: center;
-  /* margin: 10%; */
-  /* padding: 10%; */
   border-radius: 5%;
-  /* min-width: 90%; */
-  /* width: 100px; */
   margin: 5%
 }
 
