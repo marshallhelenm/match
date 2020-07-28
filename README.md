@@ -29,5 +29,3 @@ Dependencies include but are not limited to:
 - react-card-flip
 - react-responsive
 - semantic-ui-react
-
-(Note: Still tweaking responsive sizing!)
